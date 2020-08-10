@@ -1,0 +1,20 @@
+<section class="app-container">
+    <header>
+        <mat-toolbar color="primary" class="mat-elevation-z3">
+            <header style="width: 100%;">
+                <h2 class="logo">BloomRunner</h2>
+                <nav color="primary">
+                    <a mat-button *ngIf="!(isLoggedIn$|async)" [routerLink]="['/login']">Login</a>
+                    <a mat-button *ngIf="!(isLoggedIn$|async)" [routerLink]="['/register']" >Register</a>
+                    <a mat-button *ngIf="isLoggedIn$|async" [routerLink]="['/florists']" >Florists</a>
+                    <a mat-button *ngIf="isLoggedIn$|async" (click)="logOut()">Logout</a>
+                </nav>
+            </header>
+            <div *ngIf="isLoggedIn$|async" class="profileInfo">
+                <span>Hi, {{userData.first_name}}</span>
+                    <img [src]="userData.profile_pic" class="profile">
+            </div>
+        </mat-toolbar>
+
+    </header>
+</section>

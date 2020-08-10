@@ -1,0 +1,69 @@
+<app-header></app-header>
+<mat-card *ngIf="isLoaded$|async" style="display: flex; justify-content: center; align-items: center">
+    <mat-progress-spinner [diameter]="40" color="primary" mode="indeterminate">
+    </mat-progress-spinner>
+</mat-card>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <h2>Register</h2>
+                <form name="form" (ngSubmit)="f.form.valid && onSubmit(f)" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" name="User.FirstName" [(ngModel)]="user.FirstName"
+                            #firstName="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" name="User.LastName" [(ngModel)]="user.LastName"
+                            #lastName="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Email</label>
+                        <input type="text" class="form-control" name="email" [(ngModel)]="model.Email"
+                            #email="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password" [(ngModel)]="model.Password"
+                            #password="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">City</label>
+                        <input type="text" class="form-control" name="city" [(ngModel)]="user.City" #city="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">State</label>
+                        <input type="text" class="form-control" name="state" [(ngModel)]="user.State"
+                            #state="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Country</label>
+                        <input type="text" class="form-control" name="country" [(ngModel)]="user.Country"
+                            #country="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Street</label>
+                        <input type="text" class="form-control" name="street" [(ngModel)]="user.Street"
+                            #street="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">ZipCode</label>
+                        <input type="text" class="form-control" name="zipcode" [(ngModel)]="user.ZipCode"
+                            #zipcode="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Profile Image</label>
+                        <input type="text" class="form-control" name="profileImage" [(ngModel)]="user.profileImage"
+                            #profileImage="ngModel" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

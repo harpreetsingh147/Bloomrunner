@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+   bloomdb:
+        image: ${DOCKER_REGISTRY-}bloomrunnerdb
+        build:
+            context: .
+            dockerfile: src/db/Dockerfile
+
+   webgateway.api:
+        image: ${DOCKER_REGISTRY-}webgateway
+        build:
+            context: .
+            dockerfile: src/Gateways/WebGateway/Dockerfile
+
+   authservice.api:
+        image: ${DOCKER_REGISTRY-}authservice
+        build:
+            context: .
+            dockerfile: src/Services/Authentication/Dockerfile
+   category.api:
+        image: ${DOCKER_REGISTRY-}category.api
+        build:
+            context: .
+            dockerfile: src/Services/CategoryService/Dockerfile
+
+   florist.api:
+        image: ${DOCKER_REGISTRY-}florists
+        build:
+            context: .
+            dockerfile: src/Services/ProductService/Dockerfile

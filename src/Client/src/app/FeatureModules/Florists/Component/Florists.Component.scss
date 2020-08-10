@@ -1,0 +1,26 @@
+.floristdetail{
+  padding:20px;
+}
+.inputtxt{
+  width: 300px;
+  margin-right: 20px;
+}
+
+.spinner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.transparent .mat-dialog-container {
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.0);
+}
+
+.errorMsg{
+  border: 2px solid red;
+  padding: 10px;
+  width: 30%;
+  margin: 10px 0px;
+  background: pink;
+  border-radius: 5px;
+}

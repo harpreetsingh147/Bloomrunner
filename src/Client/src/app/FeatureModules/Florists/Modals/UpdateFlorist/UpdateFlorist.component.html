@@ -1,0 +1,72 @@
+<div>
+  <div class="add-title">
+    <h2 class="primary">Update Student</h2>
+  </div>
+  <div>
+    <form name="form" (ngSubmit)="f.form.valid && onUpdate()" #f="ngForm" novalidate>
+      <mat-grid-list cols="2" rowHeight="85px">
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field>
+              <input matInput  name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel"
+                placeholder="First Name" required>
+              <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
+                <div *ngIf="firstName.errors.required">First Name is required</div>
+              </div>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field class="example-full-width">
+              <input matInput name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" placeholder="Last Name"
+                required>
+              <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
+                <div *ngIf="lastName.errors.required">Last Name is required</div>
+              </div>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field class="example-full-width">
+              <input matInput name="class" [(ngModel)]="model.class" #class="ngModel" placeholder="Company" required>
+              <div *ngIf="f.submitted && class.invalid" class="invalid-feedback">
+                <div *ngIf="class.errors.required">Company is required</div>
+              </div>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field class="example-full-width">
+              <input matInput name="subject" [(ngModel)]="model.subject" #subject="ngModel"
+                placeholder="Contact No" required>
+              <div *ngIf="f.submitted && subject.invalid" class="invalid-feedback">
+                <div *ngIf="subject.errors.required">Contact is required</div>
+              </div>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <div class="text-inside">
+            <mat-form-field class="example-full-width">
+              <input matInput type="number" name="marks" [(ngModel)]="model.marks" #marks="ngModel" placeholder="Pincode" required>
+              <div *ngIf="f.submitted && marks.invalid" class="invalid-feedback">
+                <div *ngIf="marks.errors.required">MarPincodeks is required</div>
+              </div>
+            </mat-form-field>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <div class="btn-sec">
+        <button type="submit" mat-raised-button type="submit" color="primary" class="Update-btn">Update</button>
+        <button mat-raised-button type="button" (click)="closeDialog()" class="Discard-btn">Cancel</button>
+      </div>
+
+    </form>
+  </div>
+</div>

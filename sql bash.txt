@@ -1,0 +1,3 @@
+> docker exec -it bloomrunnerdb "bash"
+> /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "Pwd12345!"
+> docker cp <location_of_file> <container_id>:/var/opt/mssql/data

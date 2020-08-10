@@ -1,0 +1,83 @@
+services:
+  authservice.api:
+    build:
+      context: C:\Harpreet\Projects\BloomRunner
+      dockerfile: src/Services/Authentication/Dockerfile
+    container_name: authservice
+    depends_on:
+    - bloomdb
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: Data Source=bloomrunnerdb;Initial Catalog=BloomRunner;User
+        id=sa;Password=Pwd12345!;Trusted_Connection=false;Integrated Security=false
+    image: authservice
+    ports:
+    - published: 5000
+      target: 80
+    - published: 5001
+      target: 443
+    restart: on-failure
+  bloomdb:
+    build:
+      context: C:\Harpreet\Projects\BloomRunner
+      dockerfile: src/db/Dockerfile
+    container_name: bloomrunnerDb
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: Pwd12345!
+    image: bloomrunnerdb
+    ports:
+    - published: 1422
+      target: 1433
+    restart: on-failure
+  category.api:
+    build:
+      context: C:\Harpreet\Projects\BloomRunner
+      dockerfile: src/Services/CategoryService/Dockerfile
+    container_name: category.api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: category.api
+    ports:
+    - published: 6000
+      target: 80
+    - published: 6001
+      target: 443
+    volumes:
+    - /.aspnet/https:/root/.aspnet/https/:rw
+    - /.microsoft/usersecrets:/root/.microsoft/usersecrets:rw
+  florist.api:
+    build:
+      context: C:\Harpreet\Projects\BloomRunner
+      dockerfile: src/Services/ProductService/Dockerfile
+    container_name: florist
+    depends_on:
+    - bloomdb
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: florists
+    ports:
+    - published: 7000
+      target: 80
+    - published: 7001
+      target: 443
+    volumes:
+    - /.aspnet/https:/root/.aspnet/https/:rw
+    - /.microsoft/usersecrets:/root/.microsoft/usersecrets:rw
+  webgateway.api:
+    build:
+      context: C:\Harpreet\Projects\BloomRunner
+      dockerfile: src/Gateways/WebGateway/Dockerfile
+    container_name: webapigateway
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: webgateway
+    ports:
+    - published: 4000
+      target: 80
+    - published: 4001
+      target: 443
+    volumes:
+    - C:\Users\Princ\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\Princ\AppData\Roaming\Microsoft\UserSecrets:/root/.microsoft/usersecrets:ro
+version: '3.8'

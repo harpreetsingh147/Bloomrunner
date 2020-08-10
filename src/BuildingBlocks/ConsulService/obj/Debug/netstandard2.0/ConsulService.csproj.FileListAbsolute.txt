@@ -1,0 +1,8 @@
+C:\Harpreet\Projects\BloomRunner\src\BuildingBlocks\ConsulService\bin\Debug\netstandard2.0\ConsulService.deps.json
+C:\Harpreet\Projects\BloomRunner\src\BuildingBlocks\ConsulService\bin\Debug\netstandard2.0\ConsulService.dll
+C:\Harpreet\Projects\BloomRunner\src\BuildingBlocks\ConsulService\bin\Debug\netstandard2.0\ConsulService.pdb
+C:\Harpreet\Projects\BloomRunner\src\BuildingBlocks\ConsulService\obj\Debug\netstandard2.0\ConsulService.csprojAssemblyReference.cache
+C:\Harpreet\Projects\BloomRunner\src\BuildingBlocks\ConsulService\obj\Debug\netstandard2.0\ConsulService.AssemblyInfoInputs.cache
+C:\Harpreet\Projects\BloomRunner\src\BuildingBlocks\ConsulService\obj\Debug\netstandard2.0\ConsulService.AssemblyInfo.cs
+C:\Harpreet\Projects\BloomRunner\src\BuildingBlocks\ConsulService\obj\Debug\netstandard2.0\ConsulService.dll
+C:\Harpreet\Projects\BloomRunner\src\BuildingBlocks\ConsulService\obj\Debug\netstandard2.0\ConsulService.pdb

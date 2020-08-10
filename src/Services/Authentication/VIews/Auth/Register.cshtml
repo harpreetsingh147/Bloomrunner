@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = "~/VIews/Shared/_Layout.cshtml";
+}
+
+@model AuthIdentityServer.Models.AccountViewModels.RegisterViewModel;
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<div class="container" style="margin-top:40px">
+    <form asp-controller="Auth" asp-action="Register" method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input class="form-control" asp-for="Email">
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">FirstName:</label>
+            <input class="form-control" asp-for="User.FirstName">
+            <span asp-validation-for="User.FirstName"></span>
+        </div>
+        <div class="form-group">
+            <label for="pwd">LastName:</label>
+            <input type="text" class="form-control" asp-for="User.LastName">
+            <span asp-validation-for="User.LastName"></span>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" asp-for="Password">
+            <span asp-validation-for="Password"></span>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Street:</label>
+            <input type="text" class="form-control" asp-for="User.Street">
+            <span asp-validation-for="User.Street"></span>
+        </div>
+        <div class="form-group">
+            <label for="pwd">City:</label>
+            <input type="text" class="form-control" asp-for="User.City">
+            <span asp-validation-for="User.City"></span>
+        </div>
+        <div class="form-group">
+            <label for="pwd">State:</label>
+            <input type="text" class="form-control" asp-for="User.State">
+            <span asp-validation-for="User.State"></span>
+        </div>
+        <div class="form-group">
+            <label for="pwd">Country:</label>
+            <input type="text" class="form-control" asp-for="User.Country">
+            <span asp-validation-for="User.Country"></span>
+        </div>
+        <div class="form-group">
+            <label for="pwd">ZipCode:</label>
+            <input type="text" class="form-control" asp-for="User.ZipCode">
+            <span asp-validation-for="User.ZipCode"></span>
+        </div>
+        <input type="submit" value="Submit" />
+    </form>
+</div>

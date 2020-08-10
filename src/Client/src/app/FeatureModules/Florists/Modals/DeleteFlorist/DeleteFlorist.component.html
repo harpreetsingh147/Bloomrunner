@@ -1,0 +1,23 @@
+<div>
+    <div class="add-title">
+      <h2 class="primary">Delete Florist</h2>
+    </div>
+    <div>
+      <form>
+        <mat-grid-list cols="2" rowHeight="85px">
+          <mat-grid-tile>
+            <div class="text-inside">
+              <p>Are you sure you want to delete this customer</p>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+  
+        <div class="btn-sec">
+          <button mat-raised-button type="submit" (click)="ConfirmDelete()"color="primary" class="Update-btn">Delete</button>
+          <button mat-raised-button type="button" (click)="closeDialog()" class="Discard-btn">Cancel</button>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  

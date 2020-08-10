@@ -1,0 +1,25 @@
+<section class="app-container">
+  <header>
+    <mat-toolbar color="primary" class="mat-elevation-z3">
+      <header>
+
+        <nav color="primary">
+          <a mat-button>
+            <h2>BloomRunner</h2>
+          </a>
+          <a mat-button (click)="logout()">Logout</a>
+        </nav>
+      </header>
+    </mat-toolbar>
+  </header>
+</section>
+<div class="floristdetail">
+  <div *ngIf="anyError$|async" class="errorMsg">{{anyError$|async}}</div>
+  <div layout="row" flex>
+    <button style="height: 33px;" (click)="addFlorist()" mat-raised-button color="primary">Add New Florist</button>
+  </div>
+  <div class="mat-elevation-z8">
+    <app-florist-list (onDeleted)="deleteFlorist($event)" (onUpdated)="updateFlorist($event)"
+      [isLoading]="isLoading$|async" [result]="florists$|async"></app-florist-list>
+  </div>
+</div>
